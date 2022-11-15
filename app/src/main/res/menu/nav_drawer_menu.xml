@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_topSolvers"
+        android:title="Top Solvers"
+
+        />
+
+    <item
+        android:id="@+id/menu_AllDoubts"
+        android:title="All Doubts"
+
+        />
+
+    <item android:title = "Profile">
+        <menu>
+
+            <item
+                android:id="@+id/Settings"
+                android:title="Settings"
+                android:icon="@drawable/settings_black"
+                />
+
+            <item
+                android:id="@+id/menu_logout"
+                android:title="Logout"
+                android:icon="@drawable/logout_black"
+                />
+
+        </menu>
+    </item>
+
+    <item android:title = "Communicate">
+        <menu>
+
+            <item
+                android:id="@+id/menu_rateUs"
+                android:title="Rate Us"
+                android:icon="@drawable/rateus_black"
+                />
+
+            <item
+                android:id="@+id/menu_aboutus"
+                android:title="AboutUs"
+                android:icon="@drawable/info_black"
+                />
+
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFF0FC"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="168dp">
+
+                <ImageView
+                    android:id="@+id/imageView_topBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/top_background" />
+
+                <ImageView
+                    android:id="@+id/imageView_woman2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="250dp"
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="50dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView_topBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView_topBackground"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/women2" />
+
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:gravity="center"
+                    android:text="Login to your account"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView_woman2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.43" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_yourEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Email"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tv_wrongEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Enter a valid email id"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="#f70011"
+                />
+
+            <EditText
+                android:id="@+id/et_enterEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter your email"
+                android:background="@drawable/custom_edittext"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:padding="8dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_yourPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Password"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_wrongPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Password should be of atleast 10 characters"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="#f70011"
+                />
+
+            <EditText
+                android:id="@+id/et_enterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter your password"
+                android:inputType="textPassword"
+                android:background="@drawable/custom_edittext"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:padding="8dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView_google"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/google"
+                    />
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView_facebook"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    app:srcCompat="@drawable/facebook"-->
+<!--                    />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView_twitter"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    app:srcCompat="@drawable/twitter"-->
+<!--                    />-->
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_wrongmatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Password and Email don't match"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="#f70011"
+                />
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/custom_button"
+                android:padding="5dp"
+                android:text="Log in"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#949cff" />
+
+            <Button
+                android:id="@+id/button_signUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Signup"
+                android:background="@drawable/custom_button"
+                app:backgroundTint="#949cff"
+                android:textSize="18sp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
