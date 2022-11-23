@@ -15,6 +15,7 @@ object Utility {
     }
 
     const val REQUEST_CODE_GOOGLE_ONE_TAP = 100
+    const val CHANNEL_ID = "channel_id"
 
     fun AppCompatActivity.makeToast (str: String) {
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show()

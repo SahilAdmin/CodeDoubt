@@ -5,7 +5,7 @@
     android:background="#EFF0FC"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    tools:context=".ui.SignupActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/top_background" />
+                    app:srcCompat="@drawable/login_top_background" />
 
                 <ImageView
                     android:id="@+id/imageView_woman1"
@@ -52,7 +52,7 @@
                     app:layout_constraintStart_toStartOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.87"
-                    app:srcCompat="@drawable/women1" />
+                    app:srcCompat="@drawable/login_women1" />
 
                 <TextView
                     android:id="@+id/tv_createAccount"
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Enter your email"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/login_custom_edittext"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="32dp"
@@ -143,7 +143,7 @@
                 android:ems="10"
                 android:hint="Enter your password"
                 android:inputType="textPassword"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/login_custom_edittext"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="32dp"
@@ -182,7 +182,7 @@
                 android:ems="10"
                 android:hint="Re Enter your password"
                 android:inputType="textPassword"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/login_custom_edittext"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="32dp"
@@ -204,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/google"
+                    app:srcCompat="@drawable/dashboard_google"
                     />
 
 <!--                <ImageView-->
@@ -229,7 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Register"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/login_custom_button"
                 app:backgroundTint="#949cff"
                 android:textSize="18sp"
                 android:padding="5dp"
@@ -244,7 +244,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Log in"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/login_custom_button"
                 app:backgroundTint="#949cff"
                 android:textSize="18sp"
                 android:padding="5dp"

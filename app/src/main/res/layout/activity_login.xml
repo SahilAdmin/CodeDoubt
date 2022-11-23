@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFF0FC"
-    tools:context=".LoginActivity">
+    tools:context=".ui.LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/top_background" />
+                    app:srcCompat="@drawable/login_top_background" />
 
                 <ImageView
                     android:id="@+id/imageView_woman2"
@@ -44,7 +44,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/imageView_topBackground"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/women2" />
+                    app:srcCompat="@drawable/login_women2" />
 
                 <TextView
                     android:id="@+id/tv_login"
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Enter your email"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/login_custom_edittext"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="32dp"
@@ -136,7 +136,7 @@
                 android:ems="10"
                 android:hint="Enter your password"
                 android:inputType="textPassword"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/login_custom_edittext"
                 android:backgroundTint="@color/white"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="32dp"
@@ -158,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/google"
+                    app:srcCompat="@drawable/dashboard_google"
                     />
 
 <!--                <ImageView-->
@@ -198,7 +198,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/login_custom_button"
                 android:padding="5dp"
                 android:text="Log in"
                 android:textSize="18sp"
@@ -210,7 +210,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Signup"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/login_custom_button"
                 app:backgroundTint="#949cff"
                 android:textSize="18sp"
                 android:padding="5dp"

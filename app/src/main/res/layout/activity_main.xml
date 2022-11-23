@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".MainActivity">
+                tools:context=".ui.MainActivity">
 
                 <ImageView
                     android:id="@+id/imageView_background_intro"
@@ -35,7 +35,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/background_intro" />
+                    app:srcCompat="@drawable/login_background_intro" />
 
                 <ImageView
                     android:id="@+id/imageView_background_line"
@@ -48,7 +48,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/imageView_background_intro"
                     app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/white_line" />
+                    app:srcCompat="@drawable/login_white_line" />
 
                 <ImageView
                     android:id="@+id/imageView_woman"
@@ -60,7 +60,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/imageView_background_intro"
                     app:layout_constraintTop_toBottomOf="@+id/textView_signInToContinue"
-                    app:srcCompat="@drawable/women" />
+                    app:srcCompat="@drawable/login_women" />
 
                 <TextView
                     android:id="@+id/textView_welcome_text"
@@ -103,7 +103,7 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginRight="32dp"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/login_custom_button"
                     android:clickable="true"
                     android:text="Login"
                     android:textColor="@color/black"
@@ -122,7 +122,7 @@
                     android:layout_marginEnd="32dp"
                     android:layout_marginRight="32dp"
                     android:layout_marginBottom="32dp"
-                    android:background="@drawable/custom_button"
+                    android:background="@drawable/login_custom_button"
                     android:text="SignUp"
                     android:textColor="@color/black"
                     app:backgroundTint="#c9cdff"

@@ -19,13 +19,13 @@
             <item
                 android:id="@+id/Settings"
                 android:title="Settings"
-                android:icon="@drawable/settings_black"
+                android:icon="@drawable/menu_settings_black"
                 />
 
             <item
                 android:id="@+id/menu_logout"
                 android:title="Logout"
-                android:icon="@drawable/logout_black"
+                android:icon="@drawable/menu_logout_black"
                 />
 
         </menu>
@@ -37,13 +37,13 @@
             <item
                 android:id="@+id/menu_rateUs"
                 android:title="Rate Us"
-                android:icon="@drawable/rateus_black"
+                android:icon="@drawable/menu_rateus_black"
                 />
 
             <item
                 android:id="@+id/menu_aboutus"
                 android:title="AboutUs"
-                android:icon="@drawable/info_black"
+                android:icon="@drawable/menu_info_black"
                 />
 
         </menu>

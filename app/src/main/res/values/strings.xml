@@ -2,4 +2,11 @@
     <string name="app_name">CodeDoubt</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="stream_api_key">9tjcfq9wu294</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="ask_a_doubt">Ask a doubt</string>
+    <string name="enter_your_doubt">Enter your doubt</string>
+    <string name="solved">Solved</string>
+    <string name="not_solved">Not Solved</string>
 </resources>

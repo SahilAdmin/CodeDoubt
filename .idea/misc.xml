@@ -15,11 +15,21 @@
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/facebook.xml" value="0.2555" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/google.xml" value="0.2555" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2555" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/info_black.xml" value="0.19" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/logout_black.xml" value="0.19" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/profile_back.xml" value="0.112" />
-        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/activity_dashboard.xml" value="0.264" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/profile_pic.xml" value="0.19" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/rateus_black.xml" value="0.19" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/settings_black.xml" value="0.19" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/thinkingman_black.xml" value="0.19" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/drawable/twitter.xml" value="0.19" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/activity_chat.xml" value="0.2222222222222222" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/activity_login.xml" value="0.20521590423257802" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/activity_main.xml" value="0.136" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/activity_signup.xml" value="0.20521590423257802" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/dialog_create_doubt.xml" value="0.2222222222222222" />
+        <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/doubt_list_view.xml" value="0.264" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/nav_drawer_menu.xml" value="0.1" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/layout/nav_header.xml" value="0.2212962962962963" />
         <entry key="..\:/MyCourses/6.AndroidStudio/CodeDoubt/app/src/main/res/menu/nav_drawer_menu.xml" value="0.264" />

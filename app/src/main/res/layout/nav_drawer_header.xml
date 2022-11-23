@@ -17,5 +17,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/thinkingman_black" />
+        app:srcCompat="@drawable/menu_thinkingman_black" />
 </androidx.constraintlayout.widget.ConstraintLayout>

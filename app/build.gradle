@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.sahil_admin.codedoubt"
-        minSdk 19
+        minSdk 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -75,76 +75,16 @@ dependencies {
     // Dagger hilt dependency
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
+
+    // Stream Dependencies
+    implementation "io.getstream:stream-chat-android-ui-components:5.8.2"
+    implementation "io.getstream:stream-chat-android-offline:5.8.2"
+    implementation 'io.coil-kt:coil:2.1.0'
+
+    // ViewModels
+    implementation 'androidx.activity:activity-ktx:1.5.1' // for by viewModels (for activities)
+    implementation 'androidx.fragment:fragment-ktx:1.5.4' // for by activityViewModels (for fragments)
+
+    // Recycler View
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }
-
-/*
-DAGGER HILT - DEPENDENCY INJECTION
-
-plugins {
-    ..
-
-    // dagger hilt
-    id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android'
-}
-
-// Dagger hilt dependency
-implementation "com.google.dagger:hilt-android:2.44"
-kapt "com.google.dagger:hilt-compiler:2.44"
-
-// Dagger hilt -> Allow references to generated code
-kapt {
-    correctErrorTypes true
-}
-
-IN ROOT GRADLE FILE ->
-plugins {
-    ...
-
-    id 'com.google.dagger.hilt.android' version '2.44' apply false // dagger hilt dependency
-}
-
-MAKE APPLICATION CLASS-------------------------
-@HiltAndroidApp
-class MyApp: Application() {
-}
-
-specify the application name in the manifest:
-    android:name=".MyApp"
-
-MAKE MODULE------------------------------------
-@Module // to declare a module (A module provides dependencies)
-@InstallIn(SingletonComponent::class) // defines the scope of dependencies
-object AppModule {
-
-    @Provides // so that dagger knows that this function provides dependency
-    @Singleton // so that only one instance is created throughout the lifetime of application
-    fun provideObject(
-        @Named("str1") str: String // if returning class has constructor we need to inject those parameters
-    ) : MyObject {
-        return MyObject(str)
-    }
-
-    @Provides @Singleton @Named("str1")
-    fun provideString1() = "Sahil"
-
-    @Provides @Singleton @Named("str2")
-    fun provideString2() = "Mahajan"
-}
-
-COMPONENTS -> DEFINES THE LIFECYCLE OF INJECTED DEPENDENCIES
-// Singleton Component -> As long as application lives
-// ViewModel Component -> View Model
-// Activity Component -> Lives as long as the activity, destroyed in onStop method
-// Activity Retained Component -> Lives across configuration changes created in onCreate till onDestroy
-// Fragment Component -> Lives till the fragment lifecycle it is injected in
-
-For providing abstraction ->
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class AbstractAppModule {
-    @Binds
-    @Singleton
-    abstract fun provideObject (myObject: MyObject) : Object // Object is an interface
-}
-*/
