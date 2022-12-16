@@ -18,10 +18,10 @@ class ChatActivity : AppCompatActivity() {
 
     private val binding by lazy {ActivityChatBinding.inflate(layoutInflater)}
     private var onThread = false
-    val factory by lazy { MessageListViewModelFactory(intent.getStringExtra(CHANNEL_ID)!!) }
-    val messageListHeaderViewModel by viewModels<MessageListHeaderViewModel> { factory }
-    val messageListViewModel by viewModels<MessageListViewModel> { factory }
-    val messageInputViewModel by viewModels<MessageInputViewModel> { factory }
+    private val factory by lazy { MessageListViewModelFactory(intent.getStringExtra(CHANNEL_ID)!!) }
+    private val messageListHeaderViewModel by viewModels<MessageListHeaderViewModel> { factory }
+    private val messageListViewModel by viewModels<MessageListViewModel> { factory }
+    private val messageInputViewModel by viewModels<MessageInputViewModel> { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

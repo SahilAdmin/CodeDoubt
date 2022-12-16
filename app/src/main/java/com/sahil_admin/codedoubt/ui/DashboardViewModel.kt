@@ -33,6 +33,9 @@ class DashboardViewModel @Inject constructor(private val client: ChatClient): Vi
     private val _logInEvent = MutableSharedFlow<LogInEvent>()
     val loginEvent = _logInEvent.asSharedFlow()
 
+    private val _logoutEvent = MutableSharedFlow<LogOutEvent>()
+    val logoutEvent = _logoutEvent.asSharedFlow()
+
     fun connectUser () {
 
         val currentUser = auth.currentUser!!
@@ -62,6 +65,17 @@ class DashboardViewModel @Inject constructor(private val client: ChatClient): Vi
 
             _logInEvent.emit(LogInEvent.Success)
         }
+    }
+
+    fun disconnectUser () = viewModelScope.launch {
+        val result = client.disconnect(true).await()
+
+        if(result.isError) {
+            _logoutEvent.emit(LogOutEvent.Error(result.error().message ?: "Unknown Error"))
+            return@launch
+        }
+
+        _logoutEvent.emit(LogOutEvent.Success)
     }
 
     fun createChannel(question: String) {
@@ -116,5 +130,10 @@ class DashboardViewModel @Inject constructor(private val client: ChatClient): Vi
     sealed class ChannelCreateEvent {
         object Success: ChannelCreateEvent()
         class Error (val e: String): ChannelCreateEvent()
+    }
+
+    sealed class LogOutEvent {
+        object Success: LogOutEvent()
+        class Error (val e: String): LogOutEvent()
     }
 }
