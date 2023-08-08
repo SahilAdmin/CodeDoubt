@@ -133,7 +133,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:maxLines="2"
-                                android:text="lsdkfasdfjsdklfjsdlkfajsdal;kjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkfkjfsdlkajfsadklfjsdlakjlksdjfsdlkfjsdkljfsdklfjsdkljfsdkljfsdlkjfsdlkf"
+                                android:text="email"
                                 android:textColor="#dae76d"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -159,8 +159,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
+                        android:layout_marginTop="220dp"
                         android:layout_marginEnd="24dp"
-                        android:layout_marginTop="200dp"
                         android:background="@drawable/dashboard_background_board"
                         android:elevation="20dp"
                         android:padding="25dp"
@@ -193,17 +193,17 @@
                                     app:srcCompat="@drawable/dashboard_tick" />
 
                                 <TextView
-                                    android:id="@+id/textView_doubts_solved"
+                                    android:id="@+id/textView_upvotes"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="10dp"
                                     android:layout_weight="1"
-                                    android:text="Doubts Solved:"
+                                    android:text="Upvotes:"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/textView_ans_doubts_solved"
+                                    android:id="@+id/textView_noOfUpvotes"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1.15"
@@ -214,81 +214,81 @@
 
                             </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="20dp"
-                                tools:layout_editor_absoluteY="20dp">
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginTop="10dp"-->
+                            <!--                                android:orientation="horizontal"-->
+                            <!--                                tools:layout_editor_absoluteX="20dp"-->
+                            <!--                                tools:layout_editor_absoluteY="20dp">-->
 
-                                <ImageView
-                                    android:id="@+id/imageView_question"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1.75"
-                                    android:scaleType="fitCenter"
-                                    app:srcCompat="@drawable/dashboard_question_mark" />
+                            <!--                                <ImageView-->
+                            <!--                                    android:id="@+id/imageView_question"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="match_parent"-->
+                            <!--                                    android:layout_weight="1.75"-->
+                            <!--                                    android:scaleType="fitCenter"-->
+                            <!--                                    app:srcCompat="@drawable/dashboard_question_mark" />-->
 
-                                <TextView
-                                    android:id="@+id/textView_doubts_asked"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_weight="1"
-                                    android:text="Doubts Asked:"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
+                            <!--                                <TextView-->
+                            <!--                                    android:id="@+id/textView_doubts_asked"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:layout_marginStart="10dp"-->
+                            <!--                                    android:layout_weight="1"-->
+                            <!--                                    android:text="Doubts Asked:"-->
+                            <!--                                    android:textSize="16sp"-->
+                            <!--                                    android:textStyle="bold" />-->
 
-                                <TextView
-                                    android:id="@+id/textView_ans_doubts_asked"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1.15"
-                                    android:text="50"
-                                    android:textColor="#7a6de7"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
+                            <!--                                <TextView-->
+                            <!--                                    android:id="@+id/textView_ans_doubts_asked"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:layout_weight="1.15"-->
+                            <!--                                    android:text="50"-->
+                            <!--                                    android:textColor="#7a6de7"-->
+                            <!--                                    android:textSize="16sp"-->
+                            <!--                                    android:textStyle="bold" />-->
 
-                            </LinearLayout>
+                            <!--                            </LinearLayout>-->
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="20dp"
-                                tools:layout_editor_absoluteY="20dp">
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginTop="10dp"-->
+                            <!--                                android:orientation="horizontal"-->
+                            <!--                                tools:layout_editor_absoluteX="20dp"-->
+                            <!--                                tools:layout_editor_absoluteY="20dp">-->
 
-                                <ImageView
-                                    android:id="@+id/imageView_rank"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1.75"
-                                    android:scaleType="fitCenter"
-                                    app:srcCompat="@drawable/dashboard_rank" />
+                            <!--                                <ImageView-->
+                            <!--                                    android:id="@+id/imageView_rank"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="match_parent"-->
+                            <!--                                    android:layout_weight="1.75"-->
+                            <!--                                    android:scaleType="fitCenter"-->
+                            <!--                                    app:srcCompat="@drawable/dashboard_rank" />-->
 
-                                <TextView
-                                    android:id="@+id/textView_globalrank"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_weight="1"
-                                    android:text="Global Rank:"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
+                            <!--                                <TextView-->
+                            <!--                                    android:id="@+id/textView_globalrank"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:layout_marginStart="10dp"-->
+                            <!--                                    android:layout_weight="1"-->
+                            <!--                                    android:text="Global Rank:"-->
+                            <!--                                    android:textSize="16sp"-->
+                            <!--                                    android:textStyle="bold" />-->
 
-                                <TextView
-                                    android:id="@+id/textView_ans_globalrank"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1.15"
-                                    android:text="30"
-                                    android:textColor="#7a6de7"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
+                            <!--                                <TextView-->
+                            <!--                                    android:id="@+id/textView_ans_globalrank"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:layout_weight="1.15"-->
+                            <!--                                    android:text="30"-->
+                            <!--                                    android:textColor="#7a6de7"-->
+                            <!--                                    android:textSize="16sp"-->
+                            <!--                                    android:textStyle="bold" />-->
 
-                            </LinearLayout>
+                            <!--                            </LinearLayout>-->
 
                         </LinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -304,75 +304,77 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/ConstraintLayout2">
 
-                        <LinearLayout
-                            android:id="@+id/layout1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0">
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/layout1"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent"-->
+<!--                            app:layout_constraintVertical_bias="0.0">-->
 
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button_asked"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/dashboard_buttons"
-                                android:text="Asked" />
+<!--                            <androidx.appcompat.widget.AppCompatButton-->
+<!--                                android:id="@+id/button_asked"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:background="@drawable/dashboard_buttons"-->
+<!--                                android:text="Asked" />-->
 
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button_solved"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/dashboard_buttons2"
-                                android:text="Solved" />
-                        </LinearLayout>
+<!--                            <androidx.appcompat.widget.AppCompatButton-->
+<!--                                android:id="@+id/button_solved"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:background="@drawable/dashboard_buttons2"-->
+<!--                                android:text="Solved" />-->
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:id="@+id/layout2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="40dp"
-                            android:orientation="horizontal"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/layout1"
-                            app:layout_constraintVertical_bias="0.0">
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/layout2"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="40dp"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/layout1"-->
+<!--                            app:layout_constraintVertical_bias="0.0">-->
 
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button_pick"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/dashboard_buttons3"
-                                android:text="Pick" />
+<!--                            <androidx.appcompat.widget.AppCompatButton-->
+<!--                                android:id="@+id/button_pick"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:background="@drawable/dashboard_buttons3"-->
+<!--                                android:text="Pick" />-->
 
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/button_favourites"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/dashboard_buttons4"
-                                android:text="Favourites" />
-                        </LinearLayout>
+<!--                            <androidx.appcompat.widget.AppCompatButton-->
+<!--                                android:id="@+id/button_favourites"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:background="@drawable/dashboard_buttons4"-->
+<!--                                android:text="Favourites" />-->
+<!--                        </LinearLayout>-->
 
                         <ImageView
                             android:id="@+id/imageView_ask_plus"
                             android:layout_width="79dp"
                             android:layout_height="72dp"
-                            android:layout_marginTop="50dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
                             android:elevation="100dp"
                             android:scaleType="fitCenter"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout2"
+                            app:layout_constraintTop_toTopOf="@id/ConstraintLayout3"
                             app:srcCompat="@drawable/dashboard_ask_plus" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -390,7 +392,7 @@
                         tools:listitem="@layout/doubt_list_view">
 
 
-                    </androidx.recyclerview.widget.RecyclerView>
+                            </androidx.recyclerview.widget.RecyclerView>
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

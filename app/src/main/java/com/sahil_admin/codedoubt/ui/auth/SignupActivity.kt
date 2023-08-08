@@ -10,6 +10,7 @@ import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.sahil_admin.codedoubt.R
@@ -48,7 +49,7 @@ class SignupActivity : AppCompatActivity() {
         binding.imageViewGoogle.setOnClickListener { googleSignIn() }
         binding.etEnterEmail.addTextChangedListener { binding.tvWrongEmail.visibility = View.GONE }
         binding.etEnterPassword.addTextChangedListener { binding.tvWrongPassword.visibility = View.GONE }
-        binding.etReEnterPassword.addTextChangedListener { binding.tvWrongRePassword.visibility = View.GONE }
+//        binding.etReEnterPassword.addTextChangedListener { binding.tvWrongRePassword.visibility = View.GONE }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -67,14 +68,15 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun registerClicked() {
-        val email = binding.tvYourEmail.text.toString()
-        val password = binding.tvYourPassword.text.toString()
-        val rePassword = binding.tvReEnterPassword.text.toString()
+        val email = binding.etEnterEmail.text.toString()
+        val password = binding.etEnterPassword.text.toString()
+        val name = binding.etEnterName.text.toString()
+//        val rePassword = binding.etReEnterPassword.text.toString()
 
-        if(!validateEmailPassword(email, password, rePassword)) return
+        if(!validateEmailPassword(email, password, name)) return
 
         // Validated everything
-        emailPasswordSignIn(email, password)
+        emailPasswordSignIn(email, password, name)
     }
 
     private fun googleAuthForFirebase(data: Intent?) {
@@ -103,14 +105,14 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    private fun emailPasswordSignIn (email: String, password: String) {
+    private fun emailPasswordSignIn (email: String, password: String, name: String) {
         val auth = Firebase.auth
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    profileSetUp()
+                    profileSetUp(name)
 
                 } else {
                     // If sign in fails, display a message to the user.
@@ -150,9 +152,17 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    private fun profileSetUp () = CoroutineScope(Dispatchers.IO).launch {
+    private fun profileSetUp (name: String? = null) = CoroutineScope(Dispatchers.IO).launch {
         val auth = Firebase.auth
         val user = auth.currentUser!!
+
+        if(name != null) {
+            suspendCoroutine { continuation ->
+                user.updateProfile(userProfileChangeRequest {
+                    displayName = name
+                }).addOnSuccessListener { continuation.resume(Unit) }
+            }
+        }
 
         val querySnapshot = suspendCoroutine { continuation ->
             userCollectionRef.whereEqualTo("email", user.email).get().addOnCompleteListener {
@@ -164,7 +174,7 @@ class SignupActivity : AppCompatActivity() {
             suspendCoroutine { continuation ->
                 val uniqueId = UUID.randomUUID()
                 userCollectionRef.add(
-                    AuthUser(uniqueId.toString(), user.email.toString(), user.displayName.toString(), 0, 0)
+                    AuthUser(uniqueId.toString(), user.email.toString(), user.displayName.toString(), 0, mutableListOf())
 
                 ).addOnCompleteListener { continuation.resume(Unit) }
             }
@@ -176,10 +186,10 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    private fun validateEmailPassword (email: String, password: String, re_password: String): Boolean {
+    private fun validateEmailPassword (email: String, password: String, name: String): Boolean {
         if(!isValidEmail(email)) {binding.tvWrongEmail.visibility = View.VISIBLE; return false}
         if(!isValidPassword(password)) {binding.tvWrongPassword.visibility = View.VISIBLE; return false}
-        if(password != re_password) {binding.tvWrongRePassword.visibility = View.VISIBLE; return false}
+        if(name.trim().isEmpty()) {binding.tvWrongPassword.visibility = View.VISIBLE; return false}
 
         return true
     }

@@ -1,9 +1,13 @@
 package com.sahil_admin.codedoubt.objects
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class AuthUser (
     val userId: String? = null,
     val email: String? = null,
-    val name: String? = null,
-    val doubts_asked: Long? = null,
-    val doubts_solved: Long? = null,
-)
+    var name: String? = null,
+    var upvotes: Int? = null,
+    var upvoted_list: MutableList<String?>? = null
+) : Parcelable

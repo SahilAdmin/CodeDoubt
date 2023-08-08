@@ -6,6 +6,9 @@ plugins {
     // dagger hilt
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+
+    // parcelize classes
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -19,6 +22,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -37,7 +43,13 @@ android {
 
     buildFeatures {
         viewBinding true
-    } // add in the android in build.gradle (module)
+    }
+    namespace 'com.sahil_admin.codedoubt'
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }// add in the android in build.gradle (module)
 }
 
 // Dagger hilt -> Allow references to generated code
@@ -88,3 +100,80 @@ dependencies {
     // Recycler View
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }
+
+
+/*
+DAGGER HILT - DEPENDENCY INJECTION
+
+plugins {
+    ..
+
+    // dagger hilt
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+// Dagger hilt dependency
+implementation "com.google.dagger:hilt-android:2.44"
+kapt "com.google.dagger:hilt-compiler:2.44"
+
+// Dagger hilt -> Allow references to generated code
+kapt {
+    correctErrorTypes true
+}
+
+IN ROOT GRADLE FILE ->
+plugins {
+    ...
+
+    id 'com.google.dagger.hilt.android' version '2.44' apply false // dagger hilt dependency
+}
+
+MAKE APPLICATION CLASS-------------------------
+@HiltAndroidApp
+class MyApp: Application() {
+}
+
+specify the application name in the manifest:
+    android:name=".MyApp"
+
+MAKE MODULE------------------------------------
+@Module // to declare a module (A module provides dependencies)
+@InstallIn(SingletonComponent::class) // defines the scope of dependencies
+object AppModule {
+
+    @Provides // so that dagger knows that this function provides dependency
+    @Singleton // so that only one instance is created throughout the lifetime of application
+    fun provideObject(
+        @Named("str1") str: String // if returning class has constructor we need to inject those parameters
+    ) : MyObject {
+        return MyObject(str)
+    }
+
+    @Provides @Singleton @Named("str1")
+    fun provideString1() = "Sahil"
+
+    @Provides @Singleton @Named("str2")
+    fun provideString2() = "Mahajan"
+}
+
+COMPONENTS -> DEFINES THE LIFECYCLE OF INJECTED DEPENDENCIES
+// Singleton Component -> As long as application lives
+// ViewModel Component -> View Model
+// Activity Component -> Lives as long as the activity, destroyed in onStop method
+// Activity Retained Component -> Lives across configuration changes created in onCreate till onDestroy
+// Fragment Component -> Lives till the fragment lifecycle it is injected in
+
+For providing abstraction ->
+Here we can use abstract function which is not possible in object Module where we have to provide full
+implementation details if we want to provide an interface or a class.
+This enables dagger to generate less code
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class AbstractAppModule {
+    @Binds
+    @Singleton
+    abstract fun provideObject (myObject: MyObject) : Object // Object is an interface
+}
+*/

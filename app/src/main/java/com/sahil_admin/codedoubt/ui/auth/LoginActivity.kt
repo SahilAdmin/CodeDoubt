@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.common.api.ApiException
@@ -126,8 +127,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginClicked() {
-        val email = binding.tvYourEmail.text.toString()
-        val password = binding.tvYourPassword.text.toString()
+        val email = binding.etEnterEmail.text.toString()
+        val password = binding.etEnterPassword.text.toString()
 
         if(!validateEmailPassword(email, password)) return
 

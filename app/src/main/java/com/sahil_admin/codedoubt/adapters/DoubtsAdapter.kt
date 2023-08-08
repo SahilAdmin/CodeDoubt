@@ -26,23 +26,23 @@ class DoubtsAdapter (
     }
 
     override fun onBindViewHolder(holder: DoubtsViewHolder, position: Int) {
-        holder.binding.apply {
+            holder.binding.apply {
             tvDoubt.text = doubts[position].question
 
-            if(doubts[position].solved) {
-                tvUnsolved.visibility = View.GONE
-                tvSolved.visibility = View.VISIBLE
-
-            } else {
-                tvUnsolved.visibility = View.VISIBLE
-                tvSolved.visibility = View.GONE
-            }
+//            if(doubts[position].solved) {
+//                tvUnsolved.visibility = View.GONE
+//                tvSolved.visibility = View.VISIBLE
+//
+//            } else {
+//                tvUnsolved.visibility = View.VISIBLE
+//                tvSolved.visibility = View.GONE
+//            }
 
             tvAuthorName.text = doubts[position].author
 
             root.setOnClickListener {
                 startActivity(root.context, Intent(root.context, ChatActivity::class.java).apply {
-                    putExtra(Utility.CHANNEL_ID, doubts[position].doubtChannelId)
+                    putExtra(Utility.DOUBT_CODE, doubts[position])
                 }, null)
             }
         }

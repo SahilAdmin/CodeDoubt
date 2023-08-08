@@ -5,8 +5,15 @@
     <string name="stream_api_key">9tjcfq9wu294</string>
     <string name="create">Create</string>
     <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
     <string name="ask_a_doubt">Ask a doubt</string>
     <string name="enter_your_doubt">Enter your doubt</string>
     <string name="solved">Solved</string>
     <string name="not_solved">Not Solved</string>
+    <string name="doubt_solved_alert">Do you really want to mark this doubt solved. This operation can\'t be <reversed></reversed></string>
+    <string name="title_activity_leader_board">LeaderBoard</string>
+    <string name="search_leaderboard">Search Leader Board</string>
+    <string name="enter_username">Enter new Username</string>
+    <string name="update">Update</string>
+    <string name="about_us">This app is created by Admin \n\n\nFor inquiries please email at admin@gmail.com</string>
 </resources>

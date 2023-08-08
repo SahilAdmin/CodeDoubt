@@ -7,17 +7,17 @@
 
         />
 
-    <item
-        android:id="@+id/menu_AllDoubts"
-        android:title="All Doubts"
+<!--    <item-->
+<!--        android:id="@+id/menu_AllDoubts"-->
+<!--        android:title="All Doubts"-->
 
-        />
+<!--        />-->
 
     <item android:title = "Profile">
         <menu>
 
             <item
-                android:id="@+id/Settings"
+                android:id="@+id/menu_settings"
                 android:title="Settings"
                 android:icon="@drawable/menu_settings_black"
                 />
@@ -34,11 +34,11 @@
     <item android:title = "Communicate">
         <menu>
 
-            <item
-                android:id="@+id/menu_rateUs"
-                android:title="Rate Us"
-                android:icon="@drawable/menu_rateus_black"
-                />
+<!--            <item-->
+<!--                android:id="@+id/menu_rateUs"-->
+<!--                android:title="Rate Us"-->
+<!--                android:icon="@drawable/menu_rateus_black"-->
+<!--                />-->
 
             <item
                 android:id="@+id/menu_aboutus"

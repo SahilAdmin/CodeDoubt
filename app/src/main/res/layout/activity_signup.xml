@@ -75,6 +75,44 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+                android:id="@+id/tv_yourName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Name"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tv_wrongName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Name can't be empty"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="#f70011"
+                />
+
+            <EditText
+                android:id="@+id/et_enterName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter your Name"
+                android:background="@drawable/login_custom_edittext"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:padding="8dp"
+                />
+
+            <TextView
                 android:id="@+id/tv_yourEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,44 +189,44 @@
                 android:padding="8dp"
                 />
 
-            <TextView
-                android:id="@+id/tv_reEnterPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Repeat Password"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="32dp"
-                android:textSize="18sp"
-                />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_reEnterPassword"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Repeat Password"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_marginTop="32dp"-->
+<!--                android:layout_marginStart="32dp"-->
+<!--                android:textSize="18sp"-->
+<!--                />-->
 
-            <TextView
-                android:id="@+id/tv_wrongRePassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="*Passwords should match"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:textSize="12sp"
-                android:visibility="gone"
-                android:textColor="#f70011"
-                />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_wrongRePassword"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="*Passwords should match"-->
+<!--                android:layout_marginStart="32dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:visibility="gone"-->
+<!--                android:textColor="#f70011"-->
+<!--                />-->
 
-            <EditText
-                android:id="@+id/et_reEnterPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Re Enter your password"
-                android:inputType="textPassword"
-                android:background="@drawable/login_custom_edittext"
-                android:backgroundTint="@color/white"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:padding="8dp"
-                />
+<!--            <EditText-->
+<!--                android:id="@+id/et_reEnterPassword"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Re Enter your password"-->
+<!--                android:inputType="textPassword"-->
+<!--                android:background="@drawable/login_custom_edittext"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginStart="32dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+<!--                android:padding="8dp"-->
+<!--                />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
