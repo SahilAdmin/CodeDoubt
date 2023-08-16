@@ -1,10 +1,8 @@
 package com.sahil_admin.codedoubt.ui
 
+import FirebaseAuthenticator.auth
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.sahil_admin.codedoubt.objects.AuthUser
@@ -21,8 +19,6 @@ class LeaderboardViewModel : ViewModel() {
     val upvoteEvent = _upvoteEvent.asSharedFlow()
 
     private val userCollectionRef = Firebase.firestore.collection("Users")
-
-    private val auth = Firebase.auth
 
     fun upvoteUser (email: String) {
         val currentUser = auth.currentUser

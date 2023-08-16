@@ -1,5 +1,6 @@
 package com.sahil_admin.codedoubt.ui
 
+import FirebaseAuthenticator.auth
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.ktx.auth
@@ -27,7 +28,6 @@ class DashboardViewModel @Inject constructor(private val client: ChatClient): Vi
 
     private val userCollectionRef = Firebase.firestore.collection("Users")
     private val doubtsCollectionRef = Firebase.firestore.collection("Doubts")
-    private val auth = Firebase.auth
     private var user: User? = null
 
     private val _channelCreateEvent = MutableSharedFlow<ChannelCreateEvent>()

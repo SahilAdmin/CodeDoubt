@@ -1,5 +1,6 @@
 package com.sahil_admin.codedoubt.ui
 
+import FirebaseAuthenticator.auth
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -29,7 +29,7 @@ import kotlinx.coroutines.*
 class DashboardActivity : AppCompatActivity() {
 
     private val TAG = "LOG_Dashboard"
-    private val auth = Firebase.auth
+//    private val auth = Firebase.auth
     private val doubtsCollectionRef = Firebase.firestore.collection("Doubts")
     private val binding by lazy { ActivityDashboardBinding.inflate(layoutInflater) }
     private val toggle by lazy {ActionBarDrawerToggle(this, binding.drawerLayout,
@@ -177,6 +177,10 @@ class DashboardActivity : AppCompatActivity() {
     private fun signOut () = CoroutineScope(Dispatchers.IO).launch {
         auth.signOut()
         viewModel.disconnectUser()
+    }
+
+    override fun onBackPressed() {
+        signOut()
     }
 }
 

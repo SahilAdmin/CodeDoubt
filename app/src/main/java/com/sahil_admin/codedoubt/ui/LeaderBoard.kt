@@ -1,5 +1,6 @@
 package com.sahil_admin.codedoubt.ui
 
+import FirebaseAuthenticator.auth
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,7 +30,6 @@ class LeaderBoard : AppCompatActivity(), LeaderBoardAdapter.LeaderBoardRVListene
     private val viewModel by viewModels<LeaderboardViewModel>()
     private val userCollectionRef = Firebase.firestore.collection("Users")
     private val binding by lazy { ActivityLeaderboardBinding.inflate(layoutInflater) }
-    private val auth = Firebase.auth
     private val leaders = mutableListOf<AuthUser>()
     private val upvotes = mutableListOf<String?>()
     private var search: String? = null
