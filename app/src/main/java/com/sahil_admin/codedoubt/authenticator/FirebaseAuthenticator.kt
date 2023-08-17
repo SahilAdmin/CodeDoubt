@@ -1,3 +1,5 @@
+package com.sahil_admin.codedoubt.authenticator
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
@@ -5,14 +7,13 @@ import com.google.android.gms.auth.api.identity.Identity
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.sahil_admin.codedoubt.R
 import com.sahil_admin.codedoubt.Utility
 import com.sahil_admin.codedoubt.Utility.makeToast
 import com.sahil_admin.codedoubt.objects.AuthUser
+import com.sahil_admin.codedoubt.repository.FirebaseRepository
 import com.sahil_admin.codedoubt.ui.DashboardActivity
-import com.sahil_admin.codedoubt.ui.auth.Authenticator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,8 +25,6 @@ import kotlin.coroutines.suspendCoroutine
 object FirebaseAuthenticator : Authenticator {
 
     val auth = Firebase.auth
-
-    private val userCollectionRef = Firebase.firestore.collection("Users")
 
     override fun AppCompatActivity.googleSignIn() {
         val signInRequest = BeginSignInRequest.builder()
@@ -103,20 +102,15 @@ object FirebaseAuthenticator : Authenticator {
             }
         }
 
-        val querySnapshot = suspendCoroutine { continuation ->
-            userCollectionRef.whereEqualTo("email", user.email).get().addOnCompleteListener {
-                continuation.resume(it.result)
-            }
-        }
+        if(FirebaseRepository.containsUser(user.email!!)) {
+            val uniqueId = UUID.randomUUID()
+            val authUser = AuthUser(uniqueId.toString(),
+                user.email.toString(),
+                user.displayName.toString(),
+                0,
+                mutableListOf())
 
-        if(querySnapshot.documents.isEmpty()) {
-            suspendCoroutine { continuation ->
-                val uniqueId = UUID.randomUUID()
-                userCollectionRef.add(
-                    AuthUser(uniqueId.toString(), user.email.toString(), user.displayName.toString(), 0, mutableListOf())
-
-                ).addOnCompleteListener { continuation.resume(Unit) }
-            }
+            FirebaseRepository.addUser(authUser)
         }
 
         withContext(Dispatchers.Main) {
@@ -128,13 +122,7 @@ object FirebaseAuthenticator : Authenticator {
     override fun AppCompatActivity.profileCheck () = CoroutineScope(Dispatchers.IO).launch {
         val user = auth.currentUser!!
 
-        val querySnapshot = suspendCoroutine { continuation ->
-            userCollectionRef.whereEqualTo("email", user.email).get().addOnCompleteListener {
-                continuation.resume(it.result)
-            }
-        }
-
-        if(querySnapshot.documents.isEmpty()) {
+        if(!FirebaseRepository.containsUser(user.email!!)) {
             withContext(Dispatchers.Main) {
                 makeToast("User not found, please signUp first")
             }
@@ -147,7 +135,7 @@ object FirebaseAuthenticator : Authenticator {
         }
     }
 
-    override fun AppCompatActivity.googleAuthForFirebase(data: Intent?) {
+    override fun AppCompatActivity.googleAuthForFirebase(data: Intent?, signUp: Boolean) {
         val signInClient = Identity.getSignInClient(this)
         val credential = signInClient.getSignInCredentialFromIntent(data)
         val idToken = credential.googleIdToken
@@ -158,7 +146,8 @@ object FirebaseAuthenticator : Authenticator {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
-                            profileSetUp()
+                            if(signUp) profileSetUp()
+                            else profileCheck()
 
                         } else {
                             // If sign in fails, display a message to the user.

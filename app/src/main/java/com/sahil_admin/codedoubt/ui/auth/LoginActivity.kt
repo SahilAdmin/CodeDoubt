@@ -1,25 +1,19 @@
 package com.sahil_admin.codedoubt.ui.auth
 
-import FirebaseAuthenticator.emailPasswordSignIn
-import FirebaseAuthenticator.googleAuthForFirebase
-import FirebaseAuthenticator.googleSignIn
-import FirebaseAuthenticator.profileCheck
+import com.sahil_admin.codedoubt.authenticator.FirebaseAuthenticator.emailPasswordSignIn
+import com.sahil_admin.codedoubt.authenticator.FirebaseAuthenticator.googleAuthForFirebase
+import com.sahil_admin.codedoubt.authenticator.FirebaseAuthenticator.googleSignIn
+import com.sahil_admin.codedoubt.authenticator.FirebaseAuthenticator.profileCheck
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.addTextChangedListener
-import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.sahil_admin.codedoubt.Utility.REQUEST_CODE_GOOGLE_ONE_TAP
 import com.sahil_admin.codedoubt.Utility.isValidEmail
 import com.sahil_admin.codedoubt.Utility.isValidPassword
-import com.sahil_admin.codedoubt.Utility.makeToast
 import com.sahil_admin.codedoubt.databinding.ActivityLoginBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -52,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         when (requestCode) {
             REQUEST_CODE_GOOGLE_ONE_TAP -> {
                 try {
-                    googleAuthForFirebase(data)
+                    googleAuthForFirebase(data, false)
 
                 } catch (e: ApiException) {
                     // closed the dialog without signing in
