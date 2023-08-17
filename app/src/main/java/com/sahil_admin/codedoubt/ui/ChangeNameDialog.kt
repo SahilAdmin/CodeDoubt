@@ -10,7 +10,6 @@ import androidx.fragment.app.activityViewModels
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sahil_admin.codedoubt.R
 import com.sahil_admin.codedoubt.databinding.DialogChangeNameBinding
-import com.sahil_admin.codedoubt.databinding.DialogCreateDoubtBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

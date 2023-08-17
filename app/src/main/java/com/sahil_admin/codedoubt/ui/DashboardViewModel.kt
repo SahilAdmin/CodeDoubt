@@ -3,15 +3,12 @@ package com.sahil_admin.codedoubt.ui
 import com.sahil_admin.codedoubt.authenticator.FirebaseAuthenticator.auth
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.sahil_admin.codedoubt.objects.AuthUser
 import com.sahil_admin.codedoubt.objects.Doubt
 import com.sahil_admin.codedoubt.repository.FirebaseRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.User
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow

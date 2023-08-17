@@ -8,17 +8,13 @@ import android.widget.SearchView
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.sahil_admin.codedoubt.Utility.makeToast
 import com.sahil_admin.codedoubt.adapters.LeaderBoardAdapter
 import com.sahil_admin.codedoubt.databinding.ActivityLeaderboardBinding
 import com.sahil_admin.codedoubt.objects.AuthUser
 import kotlinx.coroutines.launch
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 class LeaderBoard : AppCompatActivity(), LeaderBoardAdapter.LeaderBoardRVListener {
 
