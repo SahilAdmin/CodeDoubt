@@ -14,9 +14,11 @@ import kotlin.coroutines.suspendCoroutine
 
 interface Repository {
 
-    suspend fun updateUser (email: String, newName: String)
+    suspend fun updateUser (newName: String)
 
     suspend fun getUser (email: String) : AuthUser
+
+    suspend fun getCurrentUser () : AuthUser
 
     suspend fun addDoubt (doubt: Doubt)
 

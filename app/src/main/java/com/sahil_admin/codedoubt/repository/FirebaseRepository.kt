@@ -1,5 +1,6 @@
 package com.sahil_admin.codedoubt.repository
 
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -14,6 +15,7 @@ object FirebaseRepository : Repository {
 
     private val userCollectionRef = Firebase.firestore.collection("Users")
     private val doubtCollectionRef = Firebase.firestore.collection("Doubts")
+    private val auth = Firebase.auth
 
     private suspend fun getUserSnapshot (email: String) : QuerySnapshot {
         val querySnapshot = suspendCoroutine {continuation ->
@@ -39,7 +41,13 @@ object FirebaseRepository : Repository {
         return getUserSnapshot(email).documents[0].toObject(AuthUser::class.java)!!
     }
 
-    override suspend fun updateUser(email: String, newName: String) {
+    override suspend fun getCurrentUser() : AuthUser {
+        return getUser(auth.currentUser!!.email!!)
+    }
+
+    override suspend fun updateUser(newName: String) {
+        val email = auth.currentUser!!.email!!
+
         val querySnapshot = getUserSnapshot(email)
 
         val user = querySnapshot.documents[0].toObject(AuthUser::class.java)!!

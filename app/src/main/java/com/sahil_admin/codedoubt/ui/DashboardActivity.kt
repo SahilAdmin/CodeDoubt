@@ -19,6 +19,7 @@ import com.sahil_admin.codedoubt.R
 import com.sahil_admin.codedoubt.Utility.makeToast
 import com.sahil_admin.codedoubt.adapters.DoubtsAdapter
 import com.sahil_admin.codedoubt.databinding.ActivityDashboardBinding
+import com.sahil_admin.codedoubt.getStream.Stream
 import com.sahil_admin.codedoubt.objects.Doubt
 import com.sahil_admin.codedoubt.ui.auth.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,7 +56,7 @@ class DashboardActivity : AppCompatActivity() {
         lifecycleScope.launchWhenStarted {
             viewModel.loginEvent.collect {
                 when (it) {
-                    is DashboardViewModel.LogInEvent.Success -> {
+                    is Stream.LogInEvent.Success -> {
                         Log.d(TAG, "onCreate: Successfully LoggedIn")
 
                         binding.textViewProfilename.text = it.user.name!!.toString()
@@ -63,7 +64,7 @@ class DashboardActivity : AppCompatActivity() {
                         binding.textViewProfileEmail.text = it.user.email!!.toString()
                     }
 
-                    is DashboardViewModel.LogInEvent.Error ->
+                    is Stream.LogInEvent.Error ->
                         makeToast("Stream LogIn: ${it.e}");
                 }
             }
@@ -72,10 +73,10 @@ class DashboardActivity : AppCompatActivity() {
         lifecycleScope.launchWhenStarted {
             viewModel.logoutEvent.collect {
                 when (it) {
-                    is DashboardViewModel.LogOutEvent.Success ->
+                    is Stream.LogOutEvent.Success ->
                         startActivity(Intent(this@DashboardActivity, MainActivity::class.java))
 
-                    is DashboardViewModel.LogOutEvent.Error ->
+                    is Stream.LogOutEvent.Error ->
                         makeToast("Stream LogOut: ${it.e}")
                 }
             }
@@ -84,10 +85,10 @@ class DashboardActivity : AppCompatActivity() {
         lifecycleScope.launchWhenStarted() {
             viewModel.channelCreateEvent.collect {
                 when (it) {
-                    is DashboardViewModel.ChannelCreateEvent.Success ->
+                    is Stream.ChannelCreateEvent.Success ->
                         makeToast("Channel Created Successfully")
 
-                    is DashboardViewModel.ChannelCreateEvent.Error ->
+                    is Stream.ChannelCreateEvent.Error ->
                         makeToast("Error: ${it.e}")
                 }
             }
